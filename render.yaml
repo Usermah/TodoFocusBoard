@@ -2,6 +2,11 @@ services:
   - type: web
     name: todo_app
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: ""
     startCommand: gunicorn todo_project.wsgi:application
     preDeployCommand: python manage.py migrate
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DJANGO_SETTINGS_MODULE
+        value: todo_project.settings
