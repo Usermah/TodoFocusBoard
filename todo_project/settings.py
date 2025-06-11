@@ -124,13 +124,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # Custom static files directory
+    os.path.join(BASE_DIR, 'static'),  # Custom static files directory
 ]
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # Directory for collected static files
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Directory for collected static files
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'  # Directory for uploaded media files
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Directory for uploaded media files
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
