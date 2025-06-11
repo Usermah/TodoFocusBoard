@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+
+# Django
+/staticfiles/
+/media/
+
+# VS Code
+.vscode/
+
+# Env
+.env
+venv/
+env/
+*.env
+
+# OS
+.DS_Store
+
+# Migrations (optional, keep if you want fresh db)
+**/migrations/*.pyc
+**/migrations/__pycache__/

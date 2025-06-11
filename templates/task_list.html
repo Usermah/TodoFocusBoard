@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}My Tasks{% endblock %}
+
+{% block content %}
+
+<h2>My Tasks</h2>
+
+<!-- Action Buttons -->
+<a href="{% url 'task-create' %}" class="btn btn-success mb-3">➕ Add Task</a>
+<a href="{% url 'logout' %}" class="btn btn-danger mb-3 float-end">Logout</a>
+<a href="{% url 'about' %}" class="btn btn-info mb-3 float-end me-2">About Me</a>
+
+<!-- Task List -->
+<ul class="list-group">
+    {% for task in tasks %}
+    <li class="list-group-item d-flex justify-content-between align-items-center {% if task.completed %}text-muted{% endif %}">
+        <div>
+            {% if task.completed %}
+                <strong style="text-decoration: line-through;">{{ task.title }}</strong><br>
+                <span style="text-decoration: line-through;">{{ task.description }}</span>
+            {% else %}
+                <strong>{{ task.title }}</strong><br>
+                <span>{{ task.description }}</span>
+            {% endif %}
+        </div>
+        <div>
+            <a href="{% url 'task-edit' task.pk %}" class="btn btn-sm btn-warning">Edit</a>
+            <a href="{% url 'task-delete' task.pk %}" class="btn btn-sm btn-danger">Delete</a>
+        </div>
+    </li>
+    {% empty %}
+    <li class="list-group-item">No tasks yet.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

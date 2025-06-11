@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About - Usama Ibrahim{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+    <div class="col" data-aos="fade-up" data-aos-duration="800">
+      <div class="card h-100 shadow-lg border-0 rounded-4 overflow-hidden">
+        <div class="zoom-img-container">
+          <img src="{% static 'images/usama.jpg' %}" class="card-img-top rounded-0" alt="Usama's photo"
+               style="height: 300px; object-fit: cover;">
+        </div>
+
+        <div class="card-body p-4">
+          <h5 class="card-title fw-bold text-dark">Usama Ibrahim</h5>
+          <p class="card-text mb-3">
+            I'm a <strong>400-level Computer Science student</strong> passionate about building modern web applications.<br><br>
+            I specialize in <span class="text-primary fw-semibold">Django, Python, HTML, CSS, and JavaScript</span> to create responsive and dynamic websites.
+          </p>
+
+          <p class="card-text text-muted small">
+            This project is designed not only to share posts, but also to serve as a practical tool for <strong>cybersecurity learners</strong>.<br />
+            I plan to host and share the platform on Facebook so learners can try posting content and test security by simulating post approvals.
+          </p>
+
+          <div class="d-flex gap-2 flex-wrap mt-4">
+            <a href="mailto:usamaibrahim737@gmail.com" class="btn btn-outline-success btn-sm">📧 Email</a>
+            <a href="https://github.com/Usermah" class="btn btn-outline-dark btn-sm" target="_blank">💻 GitHub</a>
+            <a href="https://www.linkedin.com/" class="btn btn-outline-primary btn-sm" target="_blank">🔗 LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optional AOS Animation Script -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+{% endblock %}
