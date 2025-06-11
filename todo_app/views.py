@@ -8,6 +8,12 @@ from django.contrib import messages
 from .forms import CustomUserCreationForm, TaskForm
 from .models import Task
 
+# in views.py (temporarily)
+
+from django.http import HttpResponse
+from django.contrib.auth.models import User
+
+
 # 🧑‍ Register
 def register_view(request):
     if request.user.is_authenticated:
@@ -96,6 +102,16 @@ def about_view(request):
 
 
 
+def create_superuser(request):
+    if User.objects.filter(username='usama').exists():
+        return HttpResponse("Superuser already exists")
+
+    User.objects.create_superuser(
+        username='usama',
+        email='usama@gmail.com',
+        password='usamaH@737!'
+    )
+    return HttpResponse("Superuser created successfully")
 
 
 

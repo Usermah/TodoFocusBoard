@@ -14,5 +14,7 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     path('register/', views.register_view, name='register'),
     path('about/', views.about_view, name='about'),
+
+    path('createsuperuser/', views.create_superuser, name='create-superuser'),  # TEMPORARY
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
