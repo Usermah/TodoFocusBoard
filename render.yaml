@@ -2,6 +2,7 @@ services:
   - type: web
     name: todo_app
     env: python
+    static_publish_path: staticfiles
     buildCommand: ""
     startCommand: gunicorn todo_project.wsgi:application
     preDeployCommand: python manage.py migrate

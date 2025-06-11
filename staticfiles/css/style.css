@@ -1,0 +1,12 @@
+body {
+    background-color: #f4f7fa;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 500px;
+}
